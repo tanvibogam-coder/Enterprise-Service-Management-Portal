@@ -10,7 +10,7 @@ A web portal where employees submit IT / HR / Administration / Infrastructure re
 |---|---|
 | Frontend | React 18 (Vite), React Router, plain CSS (responsive) |
 | Backend | Node.js + Express (REST API) |
-| Database | **MySQL 8** (`mysql2` driver, parameterised queries) |
+| Database | **MySQL-compatible (TiDB Cloud)** (`mysql2` driver, parameterised queries) |
 | Auth | JWT (Bearer token) + bcrypt password hashing |
 | Uploads | multer (files stored in `backend/uploads`) |
 | Testing | Postman / curl + browser dev tools (see `docs/TEST_CASES.md`) |
@@ -62,7 +62,7 @@ service-portal/
 
 ## Setup
 
-**Requirements:** Node.js 18+ and MySQL 8 running locally.
+**Requirements:** Node.js 18+ and a TiDB Cloud (MySQL-compatible) database. Put its host, port, user and password in backend/.env.
 
 ### 1. Backend + database
 
