@@ -105,7 +105,7 @@ export default function Requests() {
             </thead>
             <tbody>
               {data.data.map((r) => {
-                const overdue = r.is_overdue && !['resolved', 'closed'].includes(r.status);
+           const overdue = !!r.is_overdue && !['resolved', 'closed'].includes(r.status);  
                 return (
                   <tr key={r.id} className="row-link" onClick={() => navigate(`/requests/${r.id}`)}>
                     <td className="col-request_no"><Link to={`/requests/${r.id}`} onClick={(e) => e.stopPropagation()}>{r.request_no}</Link></td>

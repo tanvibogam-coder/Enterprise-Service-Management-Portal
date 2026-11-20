@@ -66,7 +66,7 @@ export default function RequestDetail() {
   if (!data) return null;
 
   const active = !['resolved', 'closed'].includes(r.status);
-  const overdue = r.is_overdue && active;
+  const overdue = !!r.is_overdue && active;
   const canMeta = user.role === 'admin' || (user.role === 'agent' && p.can_edit_priority);
 
   const changeStatus = (to) => run(() => api.patch(`/requests/${r.id}/status`, { status: to, note }), `Status changed to ${STATUS_LABEL[to]}`).then((ok) => ok && setNote(''));
