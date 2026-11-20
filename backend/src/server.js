@@ -11,7 +11,7 @@ if (!process.env.JWT_SECRET) {
 
 const app = express();
 app.disable('x-powered-by');
-app.use(cors({ origin: (process.env.CLIENT_ORIGIN || 'http://localhost:5173').split(','), exposedHeaders: ['Content-Disposition'] }));
+app.use(cors({ origin: true, exposedHeaders: ['Content-Disposition'] }));
 app.use(express.json({ limit: '1mb' }));
 
 app.get('/api/health', (req, res) => res.json({ status: 'ok', time: new Date().toISOString() }));
